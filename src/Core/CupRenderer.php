@@ -53,7 +53,7 @@ class CupRenderer {
 
     private function resolveTemplate($templateFile) {
         foreach ($this->templatesFolder as $templateFolder) {
-            if (file_exists($templateFolder . $templateFile)) {
+            if (file_exists($templateFolder . $templateFile) && !is_dir($templateFolder . $templateFile)) {
                 return $templateFolder . $templateFile;
             }
         }
@@ -62,7 +62,7 @@ class CupRenderer {
 
     private function resolveView($viewFile) {
         foreach ($this->viewsFolder as $viewFolder) {
-            if (file_exists($viewFolder . $viewFile)) {
+            if (file_exists($viewFolder . $viewFile) && !is_dir($viewFolder . $viewFile)) {
                 return $viewFolder . $viewFile;
             }
         }
@@ -78,7 +78,7 @@ class CupRenderer {
     }
 
     public function renderPartial($nomeView, array $variaveis = array(), $retornar = false) {
-        $view = $this->resolveView($viewFile);
+        $view = $this->resolveView($nomeView);
         return $this->_render($view, $variaveis, $retornar);
     }
 

@@ -2,8 +2,8 @@
     "name": "cupcake-framework/cupcake2-cuprenderer",
     "description": "Template Engine used in PHP CupCake 2 Framework",
     "autoload": {
-        "psr-0": {
-            "Cupcake2\\Core\\": "src/Core/"
+        "psr-4": {
+            "Cupcake2\\": "src/"
         }
     },
     "license": "MIT",

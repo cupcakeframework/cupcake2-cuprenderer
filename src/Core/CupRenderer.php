@@ -24,6 +24,20 @@ class CupRenderer {
      */
     public $templateFile;
 
+    /**
+     * Global Variables that will be inserted before rendering
+     * @var Array 
+     */
+    public $globals;
+
+    public function getGlobals() {
+        return $this->globals;
+    }
+
+    public function insertGlobal(array $var) {
+        $this->globals = array_merge_recursive($var, $this->globals);
+    }
+
     function __construct(Array $templatesFolder, Array $viewsFolder) {
         $this->templatesFolder = $templatesFolder;
         $this->viewsFolder = $viewsFolder;
@@ -70,9 +84,8 @@ class CupRenderer {
 
     protected function _render($arquivoParaRenderizar, array $variaveis = array(), $retornar = false) {
         ob_start();
-        if (!empty($variaveis) && is_array($variaveis)) {
-            extract($variaveis);
-        }
+        extract($variaveis);
+        extract($this->globals);
         include($arquivoParaRenderizar);
         $retorno = ob_get_contents();
         ob_end_clean();

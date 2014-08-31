@@ -58,8 +58,8 @@ class CupRenderer {
     public function render($viewFile, array $variaveis = array(), $retornar = false) {
         $view = $this->resolveView($viewFile);
         $template = $this->resolveTemplate($this->templateFile);
-        $conteudo = $this->_render($view, $variaveis, true);
-        $variaveis['conteudo'] = $conteudo;
+        $content = $this->_render($view, $variaveis, true);
+        $variaveis['content'] = $content;
         return $this->_render($template, $variaveis, $retornar);
     }
 

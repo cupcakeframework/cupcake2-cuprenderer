@@ -1,0 +1,16 @@
+{
+    "name": "cupcake-framework/cupcake2-cuprenderer",
+    "description": "Template Engine used in PHP CupCake 2 Framework",
+    "autoload": {
+        "psr-4": {
+            "CupCake2\\": "src/"
+        }
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ricardo Fiorani",
+            "email": "ricardo.fiorani@gmail.com"
+        }
+    ]
+}

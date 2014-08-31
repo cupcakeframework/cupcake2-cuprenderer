@@ -3,7 +3,7 @@
     "description": "Template Engine used in PHP CupCake 2 Framework",
     "autoload": {
         "psr-4": {
-            "Cupcake2\\": "src/"
+            "CupCake2\\": "src/"
         }
     },
     "license": "MIT",

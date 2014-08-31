@@ -59,4 +59,7 @@ Your View File
 <p>Bar is <?=$bar?><>
 ```
 
-Simple like this :)
+PS:
+--------------
+You can use it standalone with Silex :)
+Check the provider folder for more information.

@@ -34,8 +34,8 @@ class CupRenderer {
         return $this->globals;
     }
 
-    public function insertGlobal(array $var) {
-        $this->globals = array_merge_recursive($var, $this->globals);
+    public function insertGlobal($key, $var) {
+        $this->globals[$key] = $var;
     }
 
     function __construct(Array $templatesFolder, Array $viewsFolder) {
